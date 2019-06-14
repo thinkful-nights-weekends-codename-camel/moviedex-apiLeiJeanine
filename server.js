@@ -3,7 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-const MOVIEs = require('./movie-data-small.json')
+const MOVIES = require('./movie-data-small.json')
 
 const app = express()
 
@@ -23,7 +23,7 @@ app.use(function validateBearerToken(req, res, next) {
   // move to the next middleware
   next()
 })
-const validGenre = ['Animation', 'Drama', 'Romantic', 'Comedy', 'Spy', 'Crime', 'Thriller', 'Adventure', 'Documentary', 'Horror', 'Action', 'Western', 'History', 'Biography', 'Musical', 'Fantasy', 'War', 'Grotesque']
+
 
 app.get('/movies', function handleGetMovies(req, res) {
   let response = MOVIES.movies;
